@@ -1,0 +1,14 @@
+<div class="col s6 ready">
+    <h4>New Burger</h4>
+    {{#each burgers}}
+        {{#unless this.devoured}}
+            <div class="new">
+                <form action="/api/{{this.id}}?_method=PUT" method="POST">
+                    {{@index}}. {{this.burger_name}}
+                    <input type="hidden" name="devoured" value="1">
+                    <button>Devour</button>
+                </form>
+            </div>
+        {{/unless}}
+    {{/each}}
+</div>

@@ -1,0 +1,8 @@
+<div class="col s6 devoured">
+    <h4>Devoured</h4>
+    {{#each burgers}}
+        {{#if this.devoured}}
+            <p>{{@index}}. {{this.burger_name}}</p>
+        {{/if}}
+    {{/each}}
+</div>

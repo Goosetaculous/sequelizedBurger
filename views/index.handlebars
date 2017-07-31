@@ -1,0 +1,8 @@
+<div class="row">
+    {{> burger}}
+    {{> devoured}}
+</div>
+<form action="/api/add" method="POST">
+    <input  name="burger" id="burger-input" placeholder="Add a burger">
+    <button type="submit" id="add-burger">Add Burger</button>
+</form>
