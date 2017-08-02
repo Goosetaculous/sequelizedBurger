@@ -2,7 +2,9 @@ var db = require("../models")
 
 module.exports =  function(app){
     app.get("/",(req,res)=>{
-        db.burger.findAll({})
+        db.burger.findAll({
+            order: ["burger_name", 'ASC' ]
+        })
             .then((dbBurger)=>{
                 var hbsObject = {
                     burgers: dbBurger
@@ -27,6 +29,7 @@ module.exports =  function(app){
             {where: {id: req.params.id}}
         ).then(()=>{
             console.log("SUCCESs")
+            res.redirect("/")
         }).catch((e)=>{
             console.log("e ",e)
         })
