@@ -22,7 +22,7 @@ module.exports =  function(app){
     }),
 
     app.put("/api/:id", (req,res)=>{
-        console.log(req.params)
+        console.log(req.body)
         let col = Object.keys(req.body)[0]
         let val = req.body[col]
         db.burger.update(
