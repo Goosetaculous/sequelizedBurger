@@ -18,6 +18,6 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    customer.associate =
+
     return customer;
 };
