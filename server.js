@@ -26,6 +26,3 @@ db.sequelize.sync({force: true}).then(()=>{
     app.listen(port);
 })
 
-
-//app.use("/", routes);
-app.listen(port);
