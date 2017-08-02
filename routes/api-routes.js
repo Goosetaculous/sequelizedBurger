@@ -3,7 +3,7 @@ var db = require("../models")
 module.exports =  function(app){
     app.get("/",(req,res)=>{
         db.burger.findAll({
-            order: ["burger_name", 'ASC' ]
+            order: ["burger_name" ]
         })
             .then((dbBurger)=>{
                 var hbsObject = {
