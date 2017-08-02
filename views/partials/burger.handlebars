@@ -3,7 +3,7 @@
     {{#each burgers}}
         {{#unless this.devoured}}
             <div class="new">
-                <form action="/api/{{this.id}}?_method=PUT" method="POST">
+                <form class="devoured" action="/api/{{this.id}}?_method=PUT" method="POST">
                     {{@index}}. {{this.burger_name}}
                     <p>Customer: <input type="text"></p>
                     <input type="hidden" name="devoured" value="1">

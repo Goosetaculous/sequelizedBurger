@@ -4,4 +4,9 @@ $(document).ready(function(){
             return false
         }
     })
+
+    $(".devoured").on("submit","button",function(){
+        console.log( $(this).text())
+    })
+
 })
