@@ -1,4 +1,4 @@
-const TIMESTAMP =  require('sequelize-mysql-timestamp')(sequelize)
+
 
 module.exports = function(sequelize, DataTypes) {
     var burger = sequelize.define("burger", {
