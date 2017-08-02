@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         date:{
             type: DataTypes.NOW,
-            defaultValue: Sequelize.NOW
+            defaultValue: sequelize.NOW
         }
     });
     return burger;
