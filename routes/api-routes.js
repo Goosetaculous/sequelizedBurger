@@ -24,7 +24,7 @@ module.exports =  function(app){
         let val = req.body[col]
         db.burger.update(
             {devoured: val},
-            {where {id: req.params.id}}
+            {where: {id: req.params.id}}
         ).success(()=>{
             console.log("update success")
         }).error((err)=>{
