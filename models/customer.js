@@ -17,5 +17,14 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: true
         }
     });
+
+    customer.assoicate =  (models)=>{
+        customer.hasMany(models.burger,{
+            foreignKey: {
+                allowNull: true
+            }
+        })
+
+    }
     return customer;
 };
