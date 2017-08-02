@@ -9,6 +9,14 @@ module.exports =  function(app){
                 }
                 res.render("index",hbsObject)
             })
+    }),
+
+    app.post("/api/add",(req,res)=>{
+        db.burger.create({
+            burger_name: req.body.burger
+        }).then(()=>{
+            res.redirect("/")
+        })
     })
 
 
