@@ -1,21 +1,23 @@
-var orm =  require("../config/orm.js")
-var table = "burgers"
-
-var burgers= {
-    all: (cb)=>{
-        orm.selectAll(table,(res)=>{
-            cb(res)
-        })
-    },
-    create: (col,val,cb)=>{
-        orm.insertOne(table,col,val,(res)=>{
-            cb(res)
-        })
-    },
-    update: (col,val,condCol,condVal,cb)=>{
-        orm.updateOne(table,col,val,condCol,condVal,(res)=>{
-            cb(res)
-        })
-    }
-}
-module.exports=burgers
+module.exports = function(sequelize, DataTypes) {
+    var burger = sequelize.define("burger", {
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+            allowNull: false
+        },
+        burger_name: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        devoured:{
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        date:{
+            type: DataTypes.DATE,
+            allowNull: false
+        }
+    });
+    return burger;
+};
