@@ -16,10 +16,6 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false,
             defaultValue: 0
-        },
-        date:{
-            type: DataTypes.DATE,
-            defaultValue: sequelize.NOW
         }
     });
     return burger;
