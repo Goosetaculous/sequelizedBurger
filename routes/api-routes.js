@@ -25,10 +25,10 @@ module.exports =  function(app){
         db.burger.update(
             {devoured: val},
             {where: {id: req.params.id}}
-        ).success(()=>{
-            console.log("update success")
-        }).error((err)=>{
-            console.log("update err ", err)
+        ).then(()=>{
+            console.log("SUCCESs")
+        }).catch((e)=>{
+            console.log("e ",e)
         })
     })
 
