@@ -22,11 +22,11 @@ module.exports =  function(app){
     }),
 
     app.put("/api/:id", (req,res)=>{
-        console.log(req.body)
-        let col = Object.keys(req.body)[0]
-        let val = req.body[col]
+        console.log(req.body.customer)
+        // let col = Object.keys(req.body)[0]
+        // let val = req.body[col]
         db.burger.update(
-            {devoured: val},
+            {devoured: req.body.devoured},
             {where: {id: req.params.id}}
         ).then(()=>{
             console.log("SUCCESs")
