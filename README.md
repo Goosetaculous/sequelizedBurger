@@ -1,6 +1,6 @@
 # burger APP
 
-Simple app that uses EXPRESS, MySQL, and a custom ORM. "burger" lets user add a burger that will be listed.  The created burger can be devoured as desired by the user.
+Simple app that uses EXPRESS, MySQL, and SEQUELIZE ORM. "burger" lets user add a burger that will be listed.  The created burger can be devoured as desired by the user.
 
 # Installation
 

@@ -1,20 +1,23 @@
+
+
 module.exports = function(sequelize, DataTypes) {
-    var burger = sequelize.define("burger", {
+    var customer = sequelize.define("customer", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },
-        burger_name: {
+        customer_name: {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        devoured:{
+        burger_id:{
             type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 0
+            allowNull: true
         }
     });
-    return burger;
+
+    customer.associate =
+    return customer;
 };
