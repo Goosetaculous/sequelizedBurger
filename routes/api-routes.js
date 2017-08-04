@@ -23,7 +23,7 @@ function updateBurger(customerId,bgId){
 module.exports =  function(app){
     app.get("/",(req,res)=>{
         db.burger.findAll({
-            include: [{model: customer, as: 'customer'}],
+            include: [{model: db.customer, as: 'customer'}],
             order: ["burger_name" ]
         }).then((dbBurger)=>{
             console.log("DATA: ", dbBurger)
