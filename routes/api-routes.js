@@ -1,9 +1,9 @@
 var db = require("../models")
 
-function addCustomer(customerName){
+function addCustomer(customerName, bgId){
 
     db.customer.findOrCreate({
-        where: {customer_name:customerName }
+        where: {customer_name:customerName, burger_id: bgId  }
     })
 
 }
@@ -35,7 +35,7 @@ module.exports =  function(app){
             {devoured: req.body.devoured},
             {where: {id: req.params.id}}
         ).then(()=>{
-            addCustomer(customerName)
+            addCustomer(customerName,req.params.id)
 
             res.redirect("/")
         }).catch((e)=>{
