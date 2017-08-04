@@ -4,9 +4,13 @@ Simple app that uses EXPRESS, MySQL, and SEQUELIZE ORM. "burger" lets user add a
 
 # Installation
 
-git clone https://github.com/Goosetaculous/burger.git
+https://github.com/Goosetaculous/sequelizedBurger
 npm install
 
 # DEMO
 
-https://guarded-thicket-78102.herokuapp.com/
+https://sequalizedburger.herokuapp.com/
+
+# Features
+- User can add a burger.
+- User can assign a customer who ate the burger.

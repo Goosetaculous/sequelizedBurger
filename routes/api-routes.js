@@ -26,7 +26,6 @@ module.exports =  function(app){
             include: [{model: db.customer, as: 'customer'}],
             order: ["burger_name" ]
         }).then((dbBurger)=>{
-            console.log("DATA: ", dbBurger)
             var hbsObject = {
                 burgers: dbBurger
             }
