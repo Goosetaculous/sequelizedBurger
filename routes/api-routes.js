@@ -3,7 +3,7 @@ var db = require("../models")
 function addCustomer(customerName, bgId){
     db.customer.findOrCreate({
         where: { customer_name:customerName  }
-    }).success((data,created)=>{
+    }).then((data)=>{
         console.log("data: ",data.values)
     })
 }
