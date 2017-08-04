@@ -4,9 +4,9 @@ function addCustomer(customerName, bgId){
     db.customer.findOrCreate({
         where: { customer_name:customerName  }
     }).spread((data,created)=>{
-        console.log(data.get({
+        console.log("DATA--------------> ",data.get({
             plain: true
-        }))
+        }).id)
         console.log(created)
     })
 }
