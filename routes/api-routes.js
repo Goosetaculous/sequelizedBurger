@@ -4,7 +4,7 @@ function addCustomer(customerName, bgId){
     db.customer.findOrCreate({
         where: { customer_name:customerName  }
     }).then((data)=>{
-        console.log("data: ",data)
+        console.log("data: ",data[0].c1)
     })
 }
 
