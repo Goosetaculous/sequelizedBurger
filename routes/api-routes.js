@@ -3,7 +3,7 @@ var db = require("../models")
 function addCustomer(customerName, bgId){
 
     db.customer.findOrCreate({
-        where: {customer_name:customerName, burger_id: bgId  }
+        where: {customer_name:customerName  }
     })
 
 }
