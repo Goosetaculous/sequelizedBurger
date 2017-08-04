@@ -1,5 +1,3 @@
-
-
 module.exports = function(sequelize, DataTypes) {
     var customer = sequelize.define("customer", {
         id: {
@@ -12,19 +10,13 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        // burger_id:{
-        //     type: DataTypes.INTEGER,
-        //     allowNull: true
-        // }
     });
-
     customer.assoicate =  (models)=>{
         customer.hasMany(models.burger,{
             foreignKey: {
                 allowNull: true
             }
         })
-
     }
     return customer;
 };
