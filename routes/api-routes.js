@@ -3,8 +3,8 @@ var db = require("../models")
 function addCustomer(customerName, bgId){
     db.customer.findOrCreate({
         where: { customer_name:customerName  }
-    }).spread((data)=>{
-        console.log("data: ",data)
+    }).success((data,created)=>{
+        console.log("data: ",data.values)
     })
 }
 
