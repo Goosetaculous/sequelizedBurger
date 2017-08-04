@@ -1,5 +1,13 @@
 var db = require("../models")
 
+function addCustomer(customerName){
+
+    db.customer.findOrCreate({
+        where: {customer_name:customerName }
+    })
+
+}
+
 module.exports =  function(app){
     app.get("/",(req,res)=>{
         db.burger.findAll({
@@ -22,14 +30,13 @@ module.exports =  function(app){
     }),
 
     app.put("/api/:id", (req,res)=>{
-        console.log(req.body.customer)
-        // let col = Object.keys(req.body)[0]
-        // let val = req.body[col]
+        var customerName =  req.body.customer
         db.burger.update(
             {devoured: req.body.devoured},
             {where: {id: req.params.id}}
         ).then(()=>{
-            console.log("SUCCESs")
+            addCustomer(customerName)
+
             res.redirect("/")
         }).catch((e)=>{
             console.log("e ",e)
