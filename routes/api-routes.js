@@ -3,12 +3,24 @@ var db = require("../models")
 function addCustomer(customerName, bgId){
     db.customer.findOrCreate({
         where: { customer_name:customerName  }
-    }).spread((data,created)=>{
-        console.log("DATA--------------> ",data.get({
+    }).spread((data)=>{
+        updateBurger(data.get({
             plain: true
-        }).id)
-        console.log(created)
+        }).id,bgId)
     })
+}
+
+function updateBurger(customerId,bgId){
+    db.burger.update(
+        {
+           customerId
+        },{
+            where: {
+                id: bgId
+            }
+        }
+
+    )
 }
 
 module.exports =  function(app){
@@ -38,7 +50,7 @@ module.exports =  function(app){
             {devoured: req.body.devoured},
             {where: {id: req.params.id}}
         ).then(()=>{
-            addCustomer(customerName,req.params.id)
+            console.log(addCustomer(customerName,req.params.id) )
 
             res.redirect("/")
         }).catch((e)=>{
