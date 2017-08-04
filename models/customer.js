@@ -12,10 +12,10 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        burger_id:{
-            type: DataTypes.INTEGER,
-            allowNull: true
-        }
+        // burger_id:{
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true
+        // }
     });
 
     customer.assoicate =  (models)=>{
