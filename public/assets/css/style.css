@@ -17,6 +17,6 @@ h3 {
     /*background-color: bisque;*/
 /*}*/
 
-#burger-input {
+#burger-input, .customer-input {
     background-color: white;
 }

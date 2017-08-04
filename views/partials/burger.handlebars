@@ -5,7 +5,7 @@
             <div class="new">
                 <form class="devoured" action="/api/{{this.id}}?_method=PUT" method="POST">
                     {{@index}}. {{this.burger_name}}
-                    <p>Customer: <input name="customer" type="text"></p>
+                    <p>Customer: <input class="customer-input" name="customer" type="text" placeholder="Assign a customer"></p>
                     <input type="hidden" name="devoured" value="1">
                     <button>Devour</button>
                 </form>
