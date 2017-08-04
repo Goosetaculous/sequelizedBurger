@@ -2,7 +2,7 @@
     <h4>Devoured</h4>
     {{#each burgers}}
         {{#if this.devoured}}
-            <p>{{@index}}. {{this.burger_name}}</p>
+            <p>{{@index}}. {{this.burger_name}} devoured by {{this.customer}}</p>
         {{/if}}
     {{/each}}
 </div>
